@@ -20,10 +20,10 @@ Source : https://richie.u-strasbg.fr/~virgile/sf4/public/index.php/cours/php/exe
 - Body de tableau :
   
   Boucle for h <= 24
-<?php
+/*<?php
 $json = '{"ville":$ville,"country":$country, "créneau":$creneau, "prévision":$prevision, "temp.maxC":$tempmaxC, "temp.minC":$tempminC, "temp.maxF":$tempmaxF, "temp.minF":$tempminF}'; // Calcul maths pour C° en F°
 
 var_dump(json_decode($json));
 var_dump(json_decode($json, true));
 
-?>
+?>*/
