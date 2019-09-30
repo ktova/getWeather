@@ -4,7 +4,7 @@ Source : https://richie.u-strasbg.fr/~virgile/sf4/public/index.php/cours/php/exe
 ----------------------------------------------------------------------------------------
  - Créer weather.php
  - Ajouter un header + body html + shrek en footer
- - <form> methode POST
+ - balise form methode POST
  - Bouton type 'submit' 
  - $ville = sanitize_text_field($_POST["ville"])
  - echo $ville
