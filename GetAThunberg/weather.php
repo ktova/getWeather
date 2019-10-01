@@ -67,10 +67,25 @@
           <th>Temp. Min</th>
           <th>Temp. Max</th>
   </thead>
+  
 <!-- Boucle foreach pour les données prévisonnelles :
     foreach value in json->list créer une rangée de 4 cellules avec les valeurs:
     date - climat - température - tempmin - tempmax // déclarer valeurs dans client.php
-    // utiliser la boucle dans weather.php je crois --> 
+    // utiliser la boucle dans weather.php je crois 
+  
+    // foreach $list as $row => $innerArray
+         foreach $innerArray as $innerRow => value
+          echo'<tr>
+              <th> $dt_txt </th>
+              <th> weather -> 0 -> $main </th>
+              <th> main -> $temp </th>
+              <th> main -> $temp_min </th>
+              <th> main -> $temp_max </th>
+              </tr>'
+         /end foreach
+      /end foreach  
+  --> 
+
   </table>
 <!-- Fin du modèle -->
 
