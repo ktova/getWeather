@@ -12,16 +12,16 @@
 
     <body>
 
-  <?php /*
+  <?php 
   include 'client.php';
-  $city = sanitize_text_field($_POST["ville"]);
-  */ ?>
+  ?>
+
 
 <div class="head"> <h1>GetWeather.php</h1> </div> 
 
 <div class="centremoissa">
 
-<form id="searchville" name="search-form" method="post"> <!-- Choisir la méthode POST ou GET // Peu important ici -->
+<form id="searchville" name="search-form" method="get"> <!-- Choisir la méthode POST ou GET // Peu important ici -->
   <div class="formdiv">
    <label for="ville">Entrer la ville</label>
    <input class="villename" id="villename" maxlength="32" name="villename" required="required" type="text" />
@@ -37,7 +37,9 @@
 <div class="results">
 
   <span class="resultitre">Résultats</span><hr>
-  <span>Ville : <?php echo $_POST["villename"] ?></span> <!-- On echo pour afficher la valeur villename qu'on récupère via la requête POST du formulaire -->
+  <span>Ville : <?php echo $_GET["villename"] ?></span> <!-- On echo pour afficher la valeur villename qu'on récupère via la requête POST du formulaire -->
+  <span>Pays : <?php echo $pays ?></span>
+  <span>Température : <?php echo $temp ?></span>
 
 </div>
 </div>
