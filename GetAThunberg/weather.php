@@ -12,12 +12,12 @@
 
     <body>
 
-  <?php include 'client.php'; ?>
+  <?php include 'client.php'; ?> <!-- inclusion client.php -->
 
 <div class="head"> <h1>GetWeather.php</h1> </div> 
 
 <div class="centremoissa">
-
+<!-- Formulaire html basique -->
 <form id="searchville" name="search-form" method="get"> <!-- Choisir la méthode POST ou GET // Peu important ici -->
   <div class="formdiv">
    <label for="ville">Entrer la ville</label>
@@ -35,9 +35,11 @@
 
   <span class="resultitre">Tableur1 = <b>DailyAPI</b></span>
   <span class="resultitre">Tableur2 = <b>Prévisonel</b></span><hr>
-  <span>Ville : <?php echo $_GET["villename"] ?></span> <!-- On echo pour afficher la valeur villename qu'on récupère via la requête POST du formulaire -->
+
+  <!-- On echo pour afficher la valeur villename qu'on récupère via la requête GET du formulaire -->
+  <span>Ville : <?php echo $_GET["villename"] ?></span> 
   
-  <table class="tablestats">
+  <table class="tablestats"> <!-- Tableur 1 -->
     <thead>
           <th> Climat |</th>
           <th class="blue"> Température°K |</th>
@@ -46,16 +48,16 @@
           <th class="purple"> Temp. max.</th>
     </thead>
       <th> <?php echo $gstate ?> </th>
-      <th class="blue"> <?php echo $tempK ?> </th>
-      <th class="yellow"> <?php echo $tempC ?> </th>
-      <th class="green"> <?php echo $mintempK." - ".$mintempC ?> </th>
-      <th class="purple"> <?php echo $maxtempK." - ".$maxtempC ?> </th>
+      <th class="blue"> <?php echo $tempK ?> </th> <!-- °K -->
+      <th class="yellow"> <?php echo $tempC ?> </th> <!-- °C -->
+      <th class="green"> <?php echo $mintempK." - ".$mintempC ?> </th> <!-- min° -->
+      <th class="purple"> <?php echo $maxtempK." - ".$maxtempC ?> </th> <!-- max° -->
   </table>
 
   <hr>
 <!-- Modèle de tableau -->
   <span> Tablo :</span>
-  <span> <?php echo $_GET["villename"]." - ".$pays ?> </span>
+  <span> <?php echo $_GET["villename"]." - ".$pays ?> </span> <!-- On utilise les . aux éxtrémités d'une inclusion de données non $variables  -->
   
   <table class="tablestats">
   <thead>

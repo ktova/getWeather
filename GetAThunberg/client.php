@@ -28,8 +28,8 @@ function getWeather($url){  //La fonction est utilisé pour récupérer le .json
 
 if ($_GET['villename']) {
    // Utilisation de la fonction getWeather pour retrieve le json
-   $villedata = getWeather("http://api.openweathermap.org/data/2.5/forecast?q=".$_GET['villename']."&appid=4554ce03af80b8d83a8af16a6ccae8de");
-   $villedatasimple = getWeather("http://api.openweathermap.org/data/2.5/weather?q=".$_GET['villename']."&appid=4554ce03af80b8d83a8af16a6ccae8de");
+   $villedata = getWeather("http://api.openweathermap.org/data/2.5/forecast?q=".$_GET['villename']."&appid=4554ce03af80b8d83a8af16a6ccae8de"); // Forecast = previsionel
+   $villedatasimple = getWeather("http://api.openweathermap.org/data/2.5/weather?q=".$_GET['villename']."&appid=4554ce03af80b8d83a8af16a6ccae8de"); // weather = actuel
 
    //json decode pour les 2 calls API
    $args = json_decode($villedata, true);
@@ -37,7 +37,7 @@ if ($_GET['villename']) {
 
    // On déclare les valeurs dont on a besoin
    $ville = $villedata;
-   
+
    
    //Valeurs de l'API prévisonelle
    /* Structure du json de l'API Previsionnelle et ses valeurs utiles pour le projet :
