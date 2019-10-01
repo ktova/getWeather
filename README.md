@@ -18,6 +18,9 @@ Useful links:
 - Details of your plan https://openweathermap.org/price
 - Please, note that 16-days daily forecast and History API are not available for Free subscribers
 ----------------------------------------------------------------------------------------
+cURL test avec ma key:
+~ curl "https://api.openweathermap.org/data/2.5/weather?q=Paris&appid=4554ce03af80b8d83a8af16a6ccae8de"
+----------------------------------------------------------------------------------------
 
  - Créer weather.php
  - Ajouter un header + body html + shrek en footer
