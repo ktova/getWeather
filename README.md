@@ -2,6 +2,8 @@
 PHP gWeather
 Source : https://richie.u-strasbg.fr/~virgile/sf4/public/index.php/cours/php/exercice
 ----------------------------------------------------------------------------------------
+Version Test : https://teva.re/ale6
+----------------------------------------------------------------------------------------
 API key:
 - Your API key is 4554ce03af80b8d83a8af16a6ccae8de
 - Within the next couple of hours, it will be activated and ready to use
