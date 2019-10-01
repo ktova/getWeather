@@ -5,9 +5,8 @@ Source : https://richie.u-strasbg.fr/~virgile/sf4/public/index.php/cours/php/exe
 Version Test : https://teva.re/ale6
 ----------------------------------------------------------------------------------------
 API key:
-- Your API key is 4554ce03af80b8d83a8af16a6ccae8de
-- Within the next couple of hours, it will be activated and ready to use
-- You can later create more API keys on your account page
+- Teva key is 4554ce03af80b8d83a8af16a6ccae8de
+- Ale6 key is 328581c03afac840ab8d164547b7aed6
 - Please, always use your API key in each API call
 
 Endpoint:
@@ -17,7 +16,6 @@ api.openweathermap.org/data/2.5/weather?q=London,uk&APPID=4554ce03af80b8d83a8af1
 
 Useful links:
 - API documentation https://openweathermap.org/api
-- Details of your plan https://openweathermap.org/price
 - Please, note that 16-days daily forecast and History API are not available for Free subscribers
 ----------------------------------------------------------------------------------------
 cURL test avec ma key:
@@ -49,3 +47,6 @@ var_dump(json_decode($json));
 var_dump(json_decode($json, true));
 
 ?>*/
+
+- Essayer d'intégrer l'API Maps
+- Intégrer bootstrap si passioné
