@@ -12,10 +12,7 @@
 
     <body>
 
-  <?php 
-  include 'client.php';
-  ?>
-
+  <?php include 'client.php'; ?>
 
 <div class="head"> <h1>GetWeather.php</h1> </div> 
 
@@ -36,10 +33,44 @@
 <div class="flexcontainer">
 <div class="results">
 
-  <span class="resultitre">Résultats</span><hr>
+  <span class="resultitre">Tableur1 = <b>DailyAPI</b></span>
+  <span class="resultitre">Tableur2 = <b>Prévisonel</b></span><hr>
   <span>Ville : <?php echo $_GET["villename"] ?></span> <!-- On echo pour afficher la valeur villename qu'on récupère via la requête POST du formulaire -->
-  <span>Pays : <?php echo $pays ?></span>
-  <span>Température : <?php echo $temp ?></span>
+  
+  <table class="tablestats">
+    <thead>
+          <th> Climat |</th>
+          <th class="blue"> Température°K |</th>
+          <th class="yellow"> Température°C |</th>
+          <th class="green"> Temp. min. |</th>
+          <th class="purple"> Temp. max.</th>
+    </thead>
+      <th> <?php echo $gstate ?> </th>
+      <th class="blue"> <?php echo $tempK ?> </th>
+      <th class="yellow"> <?php echo $tempC ?> </th>
+      <th class="green"> <?php echo $mintempK." - ".$mintempC ?> </th>
+      <th class="purple"> <?php echo $maxtempK." - ".$maxtempC ?> </th>
+  </table>
+
+  <hr>
+<!-- Modèle de tableau -->
+  <span> Tablo :</span>
+  <span> <?php echo $_GET["villename"]." - ".$pays ?> </span>
+  
+  <table class="tablestats">
+  <thead>
+          <th>Date</th>
+          <th>Sky</th>
+          <th>Température</th>
+          <th>Temp. Min</th>
+          <th>Temp. Max</th>
+  </thead>
+<!-- Boucle foreach pour les données prévisonnelles :
+    foreach value in json->list créer une rangée de 4 cellules avec les valeurs:
+    date - climat - température - tempmin - tempmax // déclarer valeurs dans client.php
+    // utiliser la boucle dans weather.php je crois --> 
+  </table>
+<!-- Fin du modèle -->
 
 </div>
 </div>

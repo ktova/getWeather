@@ -27,29 +27,56 @@ function getWeather($url){  //La fonction est utilisé pour récupérer le .json
     }
 
 if ($_GET['villename']) {
-   $villedata = getWeather("http://api.openweathermap.org/data/2.5/weather?q=".$_GET['villename']."&appid=4554ce03af80b8d83a8af16a6ccae8de");
-   
+   // Utilisation de la fonction getWeather pour retrieve le json
+   $villedata = getWeather("http://api.openweathermap.org/data/2.5/forecast?q=".$_GET['villename']."&appid=4554ce03af80b8d83a8af16a6ccae8de");
+   $villedatasimple = getWeather("http://api.openweathermap.org/data/2.5/weather?q=".$_GET['villename']."&appid=4554ce03af80b8d83a8af16a6ccae8de");
+
+   //json decode pour les 2 calls API
    $args = json_decode($villedata, true);
+   $krgs = json_decode($villedatasimple, true);
 
-   $pays = $args['sys']['country'];
-   $temp = $args['main']['temp']."&deg;C.";
+   // On déclare les valeurs dont on a besoin
+   $ville = $villedata;
+   
+   
+   //Valeurs de l'API prévisonelle
+   /* Structure du json de l'API Previsionnelle et ses valeurs utiles pour le projet :
+   - main 
+   - list
+    - item 1 (0)
+      - main
+        - temp (température en K)
+        - temp_min (temperature mini)
+        - temp_max (temperature max)
+      - weather
+        - 0
+          - main (état du ciel)
+          - description (description de l'état)
+      - dt_txt (date de la prévision)
+    - item 2 (1)
+    - item n (n-1)    
+   */
+   $pays = $args['city']['country'];
+   
+
+   // Valeurs de l'API journalière
+   $pi = $krgs['sys']['country'];
+   $gstate = $krgs['weather'][0]['main'];
+   $tempK = $krgs['main']['temp']."&deg;K.";
+   $tempC = $tempK - 273.15."&deg;C.";
+   $mintempK = $krgs['main']['temp_min']."&deg;K.";
+   $maxtempK = $krgs['main']['temp_max']."&deg;K.";
+   $mintempC = $mintempK - 273.15."&deg;C.";
+   $maxtempC = $maxtempK - 273.15."&deg;C.";
+
+   // On crée la chaine d'arguments 'meteoData'
+   /* $meteodata = array(
+       "ville" => $ville ,
+       "pays" => $pays ,
+       "etat" => $gstate ,
+       "temperature" => $temp ,
+       "tempmin" => $mintemp ,
+       "tempmax" => $maxtemp ,
+   );*/
 }
-
-
-
-
-
-
-
-/*
-        $dataArgs = array(
-            "name" => $nom,
-            "country" => $pays,
-            "main" => $prevision,
-            "temp" => $temp,
-            "temp_min" => $mintemp,
-            "temp_max" => $maxtemp,
-            "value5" => $val5,
-        )
-        */
 ?>
