@@ -1,3 +1,5 @@
+<?php require_once('php/template.php') ?> <!-- Delete hors-site -->
+
 <!DOCTYPE html>
     <head>
         <meta charset="utf-8">
@@ -5,21 +7,42 @@
         <title>Openweathermap API Calls</title>
         <meta name="Meteotm" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="">
+        <link rel="stylesheet" href="/css-js/weather.css">
     </head>
 
     <body>
 
-  <?php
+  <?php /*
   include 'client.php';
   $city = sanitize_text_field($_POST["ville"]);
-  ?>
+  */ ?>
 
-    <form>
-    Methode : POST / 1param : ville
-    </form>
+<div class="head"> <h1>GetWeather.php</h1> </div> 
 
-  <?php echo '$city' ?>
+<div class="centremoissa">
 
-    </body>
+<form id="searchville" name="search-form" method="post"> <!-- Choisir la méthode POST ou GET // Peu important ici -->
+  <div class="formdiv">
+   <label for="ville">Entrer la ville</label>
+   <input class="villename" id="villename" maxlength="32" name="villename" required="required" type="text" />
+   <input class="confirm" type="submit" name="confirm" id="Chercher" style="display: block;"/>
+  </div>
+</form>
+
+</div>
+
+<br>
+
+<div class="flexcontainer">
+<div class="results">
+
+  <span class="resultitre">Résultats</span><hr>
+  <span>Ville : <?php echo $_POST["villename"] ?></span> <!-- On echo pour afficher la valeur villename qu'on récupère via la requête POST du formulaire -->
+
+</div>
+</div>
+
+</body>
 </html>
+
+<?php echo($footer) ?> <!-- Delete hors-site -->
