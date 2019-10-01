@@ -2,6 +2,23 @@
 PHP gWeather
 Source : https://richie.u-strasbg.fr/~virgile/sf4/public/index.php/cours/php/exercice
 ----------------------------------------------------------------------------------------
+API key:
+- Your API key is 4554ce03af80b8d83a8af16a6ccae8de
+- Within the next couple of hours, it will be activated and ready to use
+- You can later create more API keys on your account page
+- Please, always use your API key in each API call
+
+Endpoint:
+- Please, use the endpoint api.openweathermap.org for your API calls
+- Example of API call:
+api.openweathermap.org/data/2.5/weather?q=London,uk&APPID=4554ce03af80b8d83a8af16a6ccae8de
+
+Useful links:
+- API documentation https://openweathermap.org/api
+- Details of your plan https://openweathermap.org/price
+- Please, note that 16-days daily forecast and History API are not available for Free subscribers
+----------------------------------------------------------------------------------------
+
  - Créer weather.php
  - Ajouter un header + body html + shrek en footer
  - balise form methode POST
