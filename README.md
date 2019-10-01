@@ -21,7 +21,9 @@ Useful links:
 cURL test avec ma key:
 ~ curl "https://api.openweathermap.org/data/2.5/weather?q=Paris&appid=4554ce03af80b8d83a8af16a6ccae8de"
 ----------------------------------------------------------------------------------------
-
+???
+Utiliser un proxy local pour se connecter à l'API
+----------------------------------------------------------------------------------------
  - Créer weather.php
  - Ajouter un header + body html + shrek en footer
  - balise form methode POST
