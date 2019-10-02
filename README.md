@@ -52,3 +52,7 @@ var_dump(json_decode($json, true));
 
 - Essayer d'intégrer l'API Maps
 - Intégrer bootstrap si passioné
+
+----------------
+
+Php foreach loop : https://stackoverflow.com/questions/1834703/php-foreach-loop-key-value/1834719
