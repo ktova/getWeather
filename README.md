@@ -56,3 +56,4 @@ var_dump(json_decode($json, true));
 ----------------
 
 Php foreach loop : https://stackoverflow.com/questions/1834703/php-foreach-loop-key-value/1834719
+http://www.java2s.com/Code/Php/Data-Structure/LoopingThroughanAssociativeArraywithforeach.htm
