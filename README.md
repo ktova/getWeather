@@ -19,10 +19,12 @@ Useful links:
 - Please, note that 16-days daily forecast and History API are not available for Free subscribers
 ----------------------------------------------------------------------------------------
 cURL test avec ma key:
+Retour json (shell ou url):
 ~ curl "https://api.openweathermap.org/data/2.5/weather?q=Paris&appid=4554ce03af80b8d83a8af16a6ccae8de"
 ----------------------------------------------------------------------------------------
 ???
 Utiliser un proxy local pour se connecter à l'API
+???
 ----------------------------------------------------------------------------------------
  - Créer weather.php
  - Ajouter un header + body html + shrek en footer
