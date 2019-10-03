@@ -1,0 +1,217 @@
+body {
+    margin:0 !important;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+}
+
+form {
+    display: flex;
+}
+/* Head */
+
+#main {
+    height: 100%;
+}
+
+.head {
+    display: flex;
+    justify-content: center;
+    background-color: rgb(3, 79, 150);
+}
+
+/* Form */
+
+#searchville {
+    color:black !important;
+}
+
+.black {
+    color: black !important;
+    margin-top: 10px;
+}
+
+h1 {
+    color: white;
+}
+
+h6 {
+    display: flex;
+    justify-content: center;
+}
+
+.formdiv {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.formdiv > * {
+    margin-left: 2.5px;
+    margin-right: 2.5px;
+}
+
+#Chercher {
+    border: 1px solid black;
+    background-color: white;
+}
+
+#villename {
+    border: 1px solid black;
+}
+
+.centremoissa {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+/* Results */
+
+.flexcontainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.results {
+    width: 75%;
+    height: 100% !important;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.results > * {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    color: white;
+}
+
+/* Stylized Tableau */
+
+.styleweather {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    width: 420px;
+    height: 230px;
+    background-color: white;
+    border: 2px solid rgba(88, 88, 88, 0.534);
+    border-radius: 4px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 30px;
+}
+
+.styleweather > * {
+    color: #8e8e8e;
+}
+
+.citytitle {
+    color: black;
+}
+
+.tempstyle{
+    height: 80px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+}
+
+.styleweather > span {
+    margin: 2.5px;
+}
+
+.tempstyle > span {
+    margin-left: 15px;
+}
+
+.fasss, .temp {
+    color: black !important;
+    margin-right: 15px;
+}
+
+
+/* Table */
+
+.ctname {
+    display: flex;
+    justify-content: center;
+}
+
+.tablestats {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    margin: 0;
+    width: 100% !important;
+    min-height: 950px !important;
+    height: 96%;
+    max-height: 1350px !important;
+}
+
+.tablestats > * {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.tableauprevi {
+    color: black !important;
+    background-color: white;
+    border: 2px solid rgba(88, 88, 88, 0.534);
+    border-radius: 4px;
+    height: 100%;
+    min-height: 1400px !important;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    padding: 5px;
+}
+
+/* Tableur previsionnel responsive */
+
+tr {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+}
+
+td {
+    width: 19%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+}
+
+th {
+    width: 19%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+thead {
+    height: 3.5% !important;
+}
+
+tbody {
+    height: 96.5% !important;
+}
+
+tbody > tr {
+    width: 100% !important;
+    margin-bottom: 10px;
+}

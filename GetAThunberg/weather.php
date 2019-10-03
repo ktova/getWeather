@@ -17,7 +17,11 @@
 
 <div class="head"> <h1>GetWeather.php</h1> </div> 
 
+<div class="flexcontainer">
+<div class="results">
+
 <div class="centremoissa">
+
 <!-- Formulaire html basique -->
 <form id="searchville" name="search-form" method="get"> <!-- Choisir la méthode POST ou GET // Peu important ici -->
   <div class="formdiv">
@@ -28,14 +32,6 @@
 </form>
 
 </div>
-
-<br>
-
-<div class="flexcontainer">
-<div class="results">
-
-  <!-- On echo pour afficher la valeur villename qu'on récupère via la requête GET du formulaire -->
-  <span>Ville : <?php echo $_GET["villename"] ?></span> 
 
   <div class="centremoissa">
   <div class="styleweather">
@@ -54,9 +50,10 @@
   </div>
   </div>
 
-<div class="centremoissa">
+<div id="main" class="centremoissa">
 <div class="tableauprevi">
 
+  <!-- On echo pour afficher la valeur villename qu'on récupère via la requête GET du formulaire -->
   <span class="ctname"> <?php echo $_GET["villename"]." - ".$pays ?> </span> <!-- On utilise les . aux éxtrémités d'une inclusion de données non $variables  -->
 
 <!-- Modèle de tableau -->
