@@ -8,6 +8,7 @@
         <meta name="Meteotm" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="/css-js/weather.css">
+        <script src="https://kit.fontawesome.com/0d2059c859.js" crossorigin="anonymous"></script>
     </head>
 
     <body>
@@ -33,32 +34,32 @@
 <div class="flexcontainer">
 <div class="results">
 
-  <span class="resultitre">Tableur1 = <b>DailyAPI</b></span>
-  <span class="resultitre">Tableur2 = <b>Prévisonel</b></span><hr>
-
   <!-- On echo pour afficher la valeur villename qu'on récupère via la requête GET du formulaire -->
   <span>Ville : <?php echo $_GET["villename"] ?></span> 
-  
-  <table class="tablestats"> <!-- Tableur 1 -->
-    <thead>
-          <th> Climat |</th>
-          <th class="blue"> Température°K |</th>
-          <th class="yellow"> Température°C |</th>
-          <th class="green"> Temp. min. |</th>
-          <th class="purple"> Temp. max.</th>
-    </thead>
-      <th> <?php echo $gstate ?> </th>
-      <th class="blue"> <?php echo $tempK ?> </th> <!-- °K -->
-      <th class="yellow"> <?php echo $tempC ?> </th> <!-- °C -->
-      <th class="green"> <?php echo $mintempK." - ".$mintempC ?> </th> <!-- min° -->
-      <th class="purple"> <?php echo $maxtempK." - ".$maxtempC ?> </th> <!-- max° -->
-  </table>
 
-  <hr>
+  <div class="centremoissa">
+  <div class="styleweather">
+  <span class="citytitle"> <?php echo $_GET["villename"].$pays." - " ?>Current Weather Status </span>
+  <span> <?php echo date('l h:i A') ?> </span>
+  <span> <?php echo date('j F, Y') ?> </span>
+  <span> <?php echo $dstate ?> </span> 
+  <div class="tempstyle">
+  <i class="fasss fas fa-cloud-sun fa-2x"></i>
+  <span class="temp"> <?php echo $tempC ?> </span>
+  <span> <i class="fas fa-arrow-alt-circle-down fa-0.5x"></i><?php echo $mintempC ?> </span>
+  <span> <i class="fas fa-arrow-alt-circle-up fa-0.5x"></i><?php echo $maxtempC ?> </span>
+  </div>
+  <span>Humidity: <?php echo $humidity ?>%</span>
+  <span>Wind: <?php echo $wind ?>km/h</span>
+  </div>
+  </div>
+
+<div class="centremoissa">
+<div class="tableauprevi">
+
+  <span class="ctname"> <?php echo $_GET["villename"]." - ".$pays ?> </span> <!-- On utilise les . aux éxtrémités d'une inclusion de données non $variables  -->
+
 <!-- Modèle de tableau -->
-  <span> Tablo :</span>
-  <span> <?php echo $_GET["villename"]." - ".$pays ?> </span> <!-- On utilise les . aux éxtrémités d'une inclusion de données non $variables  -->
-  
   <table class="tablestats">
   <thead>
           <th>Date</th>
@@ -67,28 +68,51 @@
           <th>Temp. Min</th>
           <th>Temp. Max</th>
   </thead>
-  
-<!-- Boucle foreach pour les données prévisonnelles :
-    foreach value in json->list créer une rangée de 4 cellules avec les valeurs:
-    date - climat - température - tempmin - tempmax // déclarer valeurs dans client.php
-    // utiliser la boucle dans weather.php je crois 
-  
-    // foreach $list as $row => $innerArray
-         foreach $innerArray as $innerRow => value
-          echo'<tr>
-              <th> $dt_txt </th>
-              <th> weather -> 0 -> $main </th>
-              <th> main -> $temp </th>
-              <th> main -> $temp_min </th>
-              <th> main -> $temp_max </th>
-              </tr>'
-         /end foreach
-      /end foreach  
-  --> 
+  <tbody>
+  <?php 
+  if (is_array($args)) {                              // Si le call des datas prévisionnels a lieu ->
+    foreach ($args as $list) {                        // Pour chaque liste dans le retour JSON ->
+      if (is_array($list)){                           // si la fonction is_array() sur les liste retourne true = prevent type Illegal string offset
+      foreach($list as $key => $value) {              // On déclare les chaines de la liste en $clé => $valeur :
+        // DEBUG  echo $key." - ".$value."<br>"; 
+        if (is_array($value)){                        // pareil que pour les listes on prevent les erreurs chiantes
+        // On déclare les valeurs ainsi que les calculs °K-273.15 = °C
+        $cDate = $value['dt_txt'];
+        $cWeather = $value['weather']['0']['main'];
+        // Température en Kelvin
+        $cTempK = $value['main']['temp'];
+        $cMintempK = $value['main']['temp_min'];
+        $cMaxtempK = $value['main']['temp_max'];
+        // Conversion Celsius
+        $difference = 273.15;
+        $cTempC = $cTempK - $difference;
+        $cMintempC = $cMintempK - $difference;
+        $cMaxtempC = $cMaxtempK - $difference;
 
+        // On affiche les valeurs avec le style html
+        echo 
+        "<tr>".
+        "<td>".$cDate."</td>".
+        "<td>".$cWeather."</td>".
+        "<td>".$cTempC."°C</td>".
+        "<td>".$cMintempC."°C</td>".
+        "<td>".$cMaxtempC."°C</td>".
+        "</tr>"
+        ;
+        }  
+        else {
+          break; // on utilise else break pour limiter le retour aux valeurs météorologiques
+        } 
+       }
+      }
+     } 
+    }
+  ?>
+  </tbody>
   </table>
+</div>
+</div>
 <!-- Fin du modèle -->
-
 </div>
 </div>
 

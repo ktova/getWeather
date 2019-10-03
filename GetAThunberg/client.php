@@ -62,12 +62,15 @@ if ($_GET['villename']) {
    // Valeurs de l'API journalière
    $pi = $krgs['sys']['country'];
    $gstate = $krgs['weather'][0]['main'];
+   $dstate = $krgs['weather'][0]['description'];
    $tempK = $krgs['main']['temp']."&deg;K.";
    $tempC = $tempK - 273.15."&deg;C.";
    $mintempK = $krgs['main']['temp_min']."&deg;K.";
    $maxtempK = $krgs['main']['temp_max']."&deg;K.";
    $mintempC = $mintempK - 273.15."&deg;C.";
    $maxtempC = $maxtempK - 273.15."&deg;C.";
+   $wind = $krgs['wind']['speed'];
+   $humidity = $krgs['main']['humidity'];
 
    // On crée la chaine d'arguments 'meteoData'
    /* $meteodata = array(
