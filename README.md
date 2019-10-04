@@ -2,7 +2,7 @@
 PHP gWeather
 Source : https://richie.u-strasbg.fr/~virgile/sf4/public/index.php/cours/php/exercice
 ----------------------------------------------------------------------------------------
-Version Test : https://teva.re/weatherapi/weather
+Version Test : https://teva.re/weatherapi/
 ----------------------------------------------------------------------------------------
 API key:
 - Teva key is 4554ce03af80b8d83a8af16a6ccae8de
